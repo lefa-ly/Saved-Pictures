@@ -1,0 +1,64 @@
+/* Theme Color Variables */
+.theme-purple {
+    --accent-color: #9c27b0;
+    --accent-light: #e1bee7;
+    --gradient: linear-gradient(135deg, #9c27b0, #7b1fa2);
+}
+
+.theme-pink {
+    --accent-color: #e91e63;
+    --accent-light: #f8bbd9;
+    --gradient: linear-gradient(135deg, #e91e63, #ad1457);
+}
+
+.theme-yellow {
+    --accent-color: #ffeb3b;
+    --accent-light: #fff9c4;
+    --gradient: linear-gradient(135deg, #ffeb3b, #fbc02d);
+}
+
+.theme-skyblue {
+    --accent-color: #00bcd4;
+    --accent-light: #b2ebf2;
+    --gradient: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+
+.theme-rainbow {
+    --accent-color: #9c27b0;
+    --accent-light: linear-gradient(135deg, 
+        #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #9c27b0);
+    --gradient: linear-gradient(135deg, 
+        #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #9c27b0);
+}
+
+/* Apply Theme Colors */
+.theme-purple .btn-luki,
+.theme-purple .gender-option.selected,
+.theme-purple .age-btn.active {
+    background: var(--gradient) !important;
+}
+
+.theme-pink .btn-luki,
+.theme-pink .gender-option.selected,
+.theme-pink .age-btn.active {
+    background: var(--gradient) !important;
+}
+
+.theme-yellow .btn-luki,
+.theme-yellow .gender-option.selected,
+.theme-yellow .age-btn.active {
+    background: var(--gradient) !important;
+    color: #333;
+}
+
+.theme-skyblue .btn-luki,
+.theme-skyblue .gender-option.selected,
+.theme-skyblue .age-btn.active {
+    background: var(--gradient) !important;
+}
+
+/* Theme-specific text colors */
+.theme-yellow .compliment-box {
+    background: linear-gradient(135deg, #ffeb3b, #ff9800);
+    color: #333;
+}

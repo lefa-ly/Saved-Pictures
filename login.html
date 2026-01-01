@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Luki Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #9c27b0, #e91e63, #ffeb3b, #00bcd4);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .login-wrapper {
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .login-left {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px 0 0 25px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .login-right {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0 25px 25px 0;
+            padding: 50px;
+        }
+        
+        .brand-logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .brand-name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #9c27b0, #e91e63, #ffeb3b, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list i {
+            color: #9c27b0;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+        
+        .form-control:focus {
+            border-color: #9c27b0;
+            box-shadow: 0 0 0 0.2rem rgba(156, 39, 176, 0.25);
+        }
+        
+        .gender-selection-login {
+            margin: 20px 0;
+        }
+        
+        .gender-option-login {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gender-option-login.selected {
+            border-color: #9c27b0;
+            background: rgba(156, 39, 176, 0.1);
+        }
+        
+        .age-group-login {
+            margin-bottom: 20px;
+        }
+        
+        .age-btn-login {
+            padding: 8px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .age-btn-login.active {
+            background: linear-gradient(135deg, #9c27b0, #e91e63);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .btn-login {
+            background: linear-gradient(135deg, #9c27b0, #e91e63);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .divider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            color: #666;
+        }
+        
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .lgbtq-inclusive {
+            background: linear-gradient(135deg, 
+                #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="row g-0">
+            <div class="col-lg-6">
+                <div class="login-left">
+                    <div class="brand-logo">
+                        <h1 class="brand-name">Luki Fashion</h1>
+                        <p class="tagline">Your Personal Fashion Assistant for Everyone</p>
+                    </div>
+                    
+                    <h4>Why Choose Luki Fashion?</h4>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i> Body size analysis with scanning technology</li>
+                        <li><i class="fas fa-check-circle"></i> Weather-appropriate clothing suggestions</li>
+                        <li><i class="fas fa-check-circle"></i> Inclusive for all genders and LGBTQ+</li>
+                        <li><i class="fas fa-check-circle"></i> Age-specific recommendations (Children to Adults)</li>
+                        <li><i class="fas fa-check-circle"></i> Wardrobe scanning and management</li>
+                        <li><i class="fas fa-check-circle"></i> Personalized compliments and feedback</li>
+                        <li><i class="fas fa-check-circle"></i> Customizable themes and colors</li>
+                    </ul>
+                    
+                    <div class="lgbtq-inclusive text-center mt-4">
+                        <i class="fas fa-rainbow"></i> Proudly LGBTQ+ Inclusive <i class="fas fa-rainbow"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="login-right">
+                    <h3 class="mb-4">Welcome Back!</h3>
+                    <p class="text-muted mb-4">Sign in to continue your fashion journey</p>
+                    
+                    <form id="loginForm" class="login-form">
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3">Personalize Your Experience</h5>
+                        
+                        <!-- Gender Selection -->
+                        <div class="gender-selection-login d-flex gap-2 mb-3">
+                            <div class="gender-option-login" data-gender="male">
+                                <i class="fas fa-mars fa-2x mb-2"></i>
+                                <div>Male</div>
+                            </div>
+                            <div class="gender-option-login" data-gender="female">
+                                <i class="fas fa-venus fa-2x mb-2"></i>
+                                <div>Female</div>
+                            </div>
+                            <div class="gender-option-login" data-gender="lgbtq">
+                                <i class="fas fa-rainbow fa-2x mb-2"></i>
+                                <div>LGBTQ+</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Age Selection -->
+                        <div class="age-group-login">
+                            <label class="form-label mb-2">Select Age Group:</label>
+                            <div>
+                                <button type="button" class="age-btn-login" data-age="child">Child (0-12)</button>
+                                <button type="button" class="age-btn-login" data-age="teen">Teen (13-19)</button>
+                                <button type="button" class="age-btn-login active" data-age="adult">Adult (20+)</button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-login">
+                            <i class="fas fa-sign-in-alt me-2"></i> Sign In
+                        </button>
+                        
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-google" style="color: #DB4437;"></i> Google
+                            </button>
+                            <button type="button" class="social-btn">
+                                <i class="fab fa-facebook" style="color: #4267B2;"></i> Facebook
+                            </button>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <p>Don't have an account? <a href="#" class="text-decoration-none" style="color: #9c27b0;">Sign up here</a></p>
+                            <p><a href="#" class="text-decoration-none" style="color: #666;">Forgot password?</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gender selection
+        document.querySelectorAll('.gender-option-login').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.gender-option-login').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+        
+        // Age selection
+        document.querySelectorAll('.age-btn-login').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.age-btn-login').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const gender = document.querySelector('.gender-option-login.selected')?.dataset.gender || 'adult';
+            const age = document.querySelector('.age-btn-login.active')?.dataset.age || 'adult';
+            
+            // Save preferences to localStorage
+            localStorage.setItem('luki_gender', gender);
+            localStorage.setItem('luki_age', age);
+            localStorage.setItem('luki_theme', 'default');
+            
+            // Redirect to main page
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>

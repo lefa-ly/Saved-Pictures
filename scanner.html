@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Scanner - Luki Fashion</title>
+    <!-- Same head as index.html -->
+    <script src="js/scanner.js" defer></script>
+</head>
+<body class="theme-default">
+    <div id="navbar-container"></div>
+    
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="display-5 mb-4"><i class="fas fa-camera me-2"></i>Body Size Scanner</h1>
+                <p class="lead mb-4">Get accurate clothing size recommendations based on your body measurements.</p>
+                
+                <!-- Scanner Interface -->
+                <div class="scanner-container mb-4">
+                    <div class="scanner-video" id="scannerVideo">
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <div class="text-center text-white">
+                                <i class="fas fa-user fa-5x mb-3"></i>
+                                <h4>Body Scanner Ready</h4>
+                                <p>Position yourself 2 meters from camera</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mb-4">
+                        <button class="btn btn-luki btn-lg me-3" id="startScanBtn">
+                            <i class="fas fa-play me-2"></i>Start Scan
+                        </button>
+                        <button class="btn btn-outline-secondary btn-lg" id="stopScanBtn" disabled>
+                            <i class="fas fa-stop me-2"></i>Stop Scan
+                        </button>
+                    </div>
+                    
+                    <div class="progress mb-3" style="height: 20px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                             id="scanProgress" style="width: 0%"></div>
+                    </div>
+                    <p class="text-center mb-0">Scanning in progress...</p>
+                </div>
+                
+                <!-- Size Results -->
+                <div class="card fashion-card mb-4" id="sizeResults" style="display: none;">
+                    <div class="card-body">
+                        <h4 class="card-title"><i class="fas fa-ruler-combined me-2"></i>Your Size Analysis</h4>
+                        <div class="row mt-4">
+                            <div class="col-md-3 text-center">
+                                <div class="size-circle bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 80px; height: 80px;">
+                                    <h4 class="mb-0">M</h4>
+                                </div>
+                                <p class="mt-2">Top Size</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="size-circle bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 80px; height: 80px;">
+                                    <h4 class="mb-0">32</h4>
+                                </div>
+                                <p class="mt-2">Waist</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="size-circle bg-warning text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 80px; height: 80px;">
+                                    <h4 class="mb-0">L</h4>
+                                </div>
+                                <p class="mt-2">Bottom Size</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="size-circle bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 80px; height: 80px;">
+                                    <h4 class="mb-0">9</h4>
+                                </div>
+                                <p class="mt-2">Shoe Size</p>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-success mt-4">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <strong>Perfect Fit Found!</strong> Based on your body measurements, these sizes will fit you best.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Instructions -->
+                <div class="card fashion-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-info-circle me-2"></i>Scanning Instructions</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Stand 2 meters from camera</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wear form-fitting clothes</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Arms slightly away from body</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Good lighting required</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Face the camera directly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Recommended Brands -->
+                <div class="card fashion-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-tags me-2"></i>Recommended Brands</h5>
+                        <p class="card-text">These brands fit your body type perfectly:</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary p-2">Nike</span>
+                            <span class="badge bg-success p-2">Zara</span>
+                            <span class="badge bg-warning p-2">H&M</span>
+                            <span class="badge bg-info p-2">Levi's</span>
+                            <span class="badge bg-danger p-2">Uniqlo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Save Results -->
+                <div class="card fashion-card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-save me-2"></i>Save Your Profile</h5>
+                        <p class="card-text">Save your measurements for future shopping.</p>
+                        <button class="btn btn-luki w-100 mb-2" id="saveProfileBtn">
+                            <i class="fas fa-user-plus me-2"></i>Save Body Profile
+                        </button>
+                        <button class="btn btn-outline-secondary w-100" onclick="generateCompliment()">
+                            <i class="fas fa-heart me-2"></i>Get Fashion Compliment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer mt-5">
+        <!-- Same footer as index.html -->
+    </footer>
+    
+    <!-- Scanner JS -->
+    <script src="js/scanner.js"></script>
+</body>
+</html>

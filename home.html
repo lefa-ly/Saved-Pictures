@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Luki Fashion</title>
+    <!-- Same head as index.html -->
+</head>
+<body class="theme-default">
+    <div id="navbar-container"></div>
+    
+    <main class="container mt-5">
+        <!-- Welcome Section -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h1 class="display-4 mb-3">Welcome to Luki Fashion! 👗</h1>
+                <p class="lead">Your personal fashion assistant that understands your body, style, and preferences.</p>
+                
+                <!-- Compliment Box -->
+                <div class="compliment-box mb-4">
+                    <h5><i class="fas fa-star"></i> Your Fashion Friend Says:</h5>
+                    <p class="mb-0">Ready to discover your perfect style today? You're going to look amazing!</p>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <a href="scanner.html" class="btn btn-luki w-100 mb-2">
+                            <i class="fas fa-camera me-2"></i>Body Scan
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="wardrobe.html" class="btn btn-luki w-100 mb-2">
+                            <i class="fas fa-archive me-2"></i>My Wardrobe
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="weather.html" class="btn btn-luki w-100 mb-2">
+                            <i class="fas fa-cloud-sun me-2"></i>Weather Check
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-luki w-100 mb-2" onclick="generateCompliment()">
+                            <i class="fas fa-heart me-2"></i>Compliment
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Weather Widget -->
+                <div id="weatherWidget"></div>
+                
+                <!-- User Profile -->
+                <div class="card fashion-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Profile</h5>
+                        <p><i class="fas fa-venus-mars me-2"></i>Gender: <span id="userGender">${currentUser.gender}</span></p>
+                        <p><i class="fas fa-birthday-cake me-2"></i>Age Group: <span id="userAge">${currentUser.age}</span></p>
+                        <p><i class="fas fa-palette me-2"></i>Theme: <span id="userTheme">${currentUser.theme}</span></p>
+                        <button class="btn btn-sm btn-luki w-100" onclick="window.location.href='settings.html'">
+                            Update Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gender Customization -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">Customize for Your Identity</h3>
+                <p class="text-muted mb-4">Select your gender identity for personalized recommendations</p>
+                
+                <div class="gender-selection">
+                    <div class="gender-option" data-gender="male">
+                        <i class="fas fa-mars fa-3x mb-3"></i>
+                        <h5>Male</h5>
+                        <small>Masculine styles & fits</small>
+                    </div>
+                    <div class="gender-option" data-gender="female">
+                        <i class="fas fa-venus fa-3x mb-3"></i>
+                        <h5>Female</h5>
+                        <small>Feminine styles & fits</small>
+                    </div>
+                    <div class="gender-option" data-gender="lgbtq">
+                        <i class="fas fa-rainbow fa-3x mb-3"></i>
+                        <h5>LGBTQ+</h5>
+                        <small>Inclusive & expressive styles</small>
+                        <div class="lgbtq-rainbow mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Age Group Selection -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">Select Your Age Group</h3>
+                <p class="text-muted mb-4">We'll adjust recommendations based on age appropriateness</p>
+                
+                <div class="age-group">
+                    <button class="age-btn" data-age="child">Child (0-12)</button>
+                    <button class="age-btn" data-age="teen">Teen (13-19)</button>
+                    <button class="age-btn active" data-age="adult">Adult (20+)</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fashion Suggestions -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-4">Today's Fashion Suggestions</h3>
+                <p class="text-muted mb-4">Based on your profile and current weather</p>
+                
+                <div class="row" id="fashionSuggestions">
+                    <!-- Suggestions will be loaded here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Scanner -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card fashion-card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-camera me-2"></i>Quick Body Scan</h5>
+                        <p class="card-text">Get instant size recommendations by scanning your body.</p>
+                        <a href="scanner.html" class="btn btn-luki">Start Scanning</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card fashion-card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-tshirt me-2"></i>Wardrobe Check</h5>
+                        <p class="card-text">Scan your clothes to see what works best for you.</p>
+                        <a href="wardrobe.html" class="btn btn-luki">Check Wardrobe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer mt-5">
+        <!-- Same footer as index.html -->
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

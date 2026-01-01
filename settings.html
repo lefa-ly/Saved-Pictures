@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Luki Fashion</title>
+    <!-- Same head as index.html -->
+</head>
+<body class="theme-default">
+    <div id="navbar-container"></div>
+    
+    <main class="container mt-5">
+        <h1 class="display-5 mb-4"><i class="fas fa-cog me-2"></i>Settings & Preferences</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Theme Selection -->
+                <div class="card fashion-card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4"><i class="fas fa-palette me-2"></i>App Theme Colors</h4>
+                        <p class="text-muted mb-4">Choose a theme that matches your style</p>
+                        
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="theme-option text-center p-3 rounded" onclick="changeTheme('theme-default')" 
+                                     style="cursor: pointer; background: linear-gradient(135deg, #9c27b0, #e91e63, #ffeb3b, #00bcd4);">
+                                    <i class="fas fa-rainbow fa-2x text-white"></i>
+                                    <p class="mt-2 mb-0 text-white">Default</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="theme-option text-center p-3 rounded" onclick="changeTheme('theme-purple')" 
+                                     style="cursor: pointer; background: linear-gradient(135deg, #9c27b0, #7b1fa2);">
+                                    <i class="fas fa-gem fa-2x text-white"></i>
+                                    <p class="mt-2 mb-0 text-white">Purple</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="theme-option text-center p-3 rounded" onclick="changeTheme('theme-pink')" 
+                                     style="cursor: pointer; background: linear-gradient(135deg, #e91e63, #ad1457);">
+                                    <i class="fas fa-heart fa-2x text-white"></i>
+                                    <p class="mt-2 mb-0 text-white">Pink</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="theme-option text-center p-3 rounded" onclick="changeTheme('theme-yellow')" 
+                                     style="cursor: pointer; background: linear-gradient(135deg, #ffeb3b, #fbc02d);">
+                                    <i class="fas fa-sun fa-2x text-dark"></i>
+                                    <p class="mt-2 mb-0 text-dark">Yellow</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="theme-option text-center p-3 rounded" onclick="changeTheme('theme-skyblue')" 
+                                     style="cursor: pointer; background: linear-gradient(135deg, #00bcd4, #0097a7);">
+                                    <i class="fas fa-cloud fa-2x text-white"></i>
+                                    <p class="mt-2 mb-0 text-white">Sky Blue</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="theme-option text-center p-3 rounded" onclick="changeTheme('theme-rainbow')" 
+                                     style="cursor: pointer; background: linear-gradient(135deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #9c27b0);">
+                                    <i class="fas fa-flag fa-2x text-white"></i>
+                                    <p class="mt-2 mb-0 text-white">Rainbow</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Settings -->
+                <div class="card fashion-card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4"><i class="fas fa-user me-2"></i>Profile Settings</h4>
+                        
+                        <form id="profileForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" value="Alex">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" value="Johnson">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" value="alex@example.com">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Update Gender Identity</label>
+                                <div class="gender-selection">
+                                    <div class="gender-option" data-gender="male">
+                                        <i class="fas fa-mars fa-2x mb-2"></i>
+                                        <div>Male</div>
+                                    </div>
+                                    <div class="gender-option" data-gender="female">
+                                        <i class="fas fa-venus fa-2x mb-2"></i>
+                                        <div>Female</div>
+                                    </div>
+                                    <div class="gender-option" data-gender="lgbtq">
+                                        <i class="fas fa-rainbow fa-2x mb-2"></i>
+                                        <div>LGBTQ+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Update Age Group</label>
+                                <div class="age-group">
+                                    <button type="button" class="age-btn" data-age="child">Child (0-12)</button>
+                                    <button type="button" class="age-btn" data-age="teen">Teen (13-19)</button>
+                                    <button type="button" class="age-btn active" data-age="adult">Adult (20+)</button>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-luki">
+                                <i class="fas fa-save me-2"></i>Save Changes
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Preferences -->
+                <div class="card fashion-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4"><i class="fas fa-sliders-h me-2"></i>Preferences</h5>
+                        
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="notificationsSwitch" checked>
+                            <label class="form-check-label" for="notificationsSwitch">Daily Fashion Tips</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="weatherSwitch" checked>
+                            <label class="form-check-label" for="weatherSwitch">Weather Alerts</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="complimentSwitch" checked>
+                            <label class="form-check-label" for="complimentSwitch">Compliment Messages</label>
+                        </div>
+                        
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="scanReminderSwitch">
+                            <label class="form-check-label" for="scanReminderSwitch">Scan Reminders</label>
+                        </div>
+                        
+                        <hr>
+                        
+                        <h6 class="mb-3">Compliment Frequency</h6>
+                        <select class="form-select mb-4">
+                            <option>Frequent (Every hour)</option>
+                            <option selected>Moderate (3 times daily)</option>
+                            <option>Occasional (Once daily)</option>
+                            <option>Minimal (Weekly)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Data Management -->
+                <div class="card fashion-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4"><i class="fas fa-database me-2"></i>Data Management</h5>
+                        
+                        <button class="btn btn-outline-primary w-100 mb-2">
+                            <i class="fas fa-download me-2"></i>Export My Data
+                        </button>
+                        
+                        <button class="btn btn-outline-secondary w-100 mb-2">
+                            <i class="fas fa-sync me-2"></i>Sync Wardrobe
+                        </button>
+                        
+                        <button class="btn btn-outline-danger w-100" data-bs-toggle="modal" data-bs-target="#resetModal">
+                            <i class="fas fa-trash me-2"></i>Reset All Data
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Help & Support -->
+                <div class="card fashion-card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4"><i class="fas fa-question-circle me-2"></i>Help & Support</h5>
+                        
+                        <button class="btn btn-outline-primary w-100 mb-2" onclick="window.location.href='feedback.html'">
+                            <i class="fas fa-comment-alt me-2"></i>Give Feedback
+                        </button>
+                        
+                        <button class="btn btn-outline-secondary w-100 mb-2">
+                            <i class="fas fa-book me-2"></i>User Guide
+                        </button>
+                        
+                        <button class="btn btn-outline-success w-100">
+                            <i class="fas fa-headset me-2"></i>Contact Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Reset Modal -->
+    <div class="modal fade" id="resetModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reset All Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to reset all your data? This will delete:</p>
+                    <ul>
+                        <li>Your body measurements</li>
+                        <li>Wardrobe scans</li>
+                        <li>Saved preferences</li>
+                        <li>Fashion history</li>
+                    </ul>
+                    <p class="text-danger">This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Reset All Data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer mt-5">
+        <!-- Same footer as index.html -->
+    </footer>
+    
+    <script>
+        // Load current settings
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentTheme = localStorage.getItem('luki_theme') || 'theme-default';
+            const currentGender = localStorage.getItem('luki_gender') || 'adult';
+            const currentAge = localStorage.getItem('luki_age') || 'adult';
+            
+            // Set active gender
+            document.querySelectorAll('.gender-option').forEach(option => {
+                option.classList.remove('selected');
+                if (option.dataset.gender === currentGender) {
+                    option.classList.add('selected');
+                }
+            });
+            
+            // Set active age
+            document.querySelectorAll('.age-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.age === currentAge) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Gender selection
+            document.querySelectorAll('.gender-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.gender-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Age selection
+            document.querySelectorAll('.age-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.age-btn').forEach(b => {
+                        b.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+            
+            // Profile form submission
+            document.getElementById('profileForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const gender = document.querySelector('.gender-option.selected')?.dataset.gender;
+                const age = document.querySelector('.age-btn.active')?.dataset.age;
+                
+                localStorage.setItem('luki_gender', gender);
+                localStorage.setItem('luki_age', age);
+                
+                // Show success message
+                displayComplimentMessage("Profile updated successfully! Your fashion recommendations will now be customized for you!");
+            });
+        });
+    </script>
+</body>
+</html>

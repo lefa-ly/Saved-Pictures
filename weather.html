@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Recommendations | Luki Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Same styles as index.html */
+        .weather-card {
+            border-radius: 15px;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #3498DB 0%, #9B59B6 100%);
+        }
+        .weather-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .outfit-suggestion {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .outfit-suggestion img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- Same navigation as index.html -->
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Weather-Based Recommendations</h1>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="weather-card">
+                        <div class="weather-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3>Sunny</h3>
+                        <h2>28°C</h2>
+                        <p>New York, NY</p>
+                        <button class="btn btn-outline-light btn-sm">Update Location</button>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Weather Preferences</h4>
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="includeWeather" checked>
+                                <label class="form-check-label" for="includeWeather">Include weather in recommendations</label>
+                            </div>
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" id="includeUV" checked>
+                                <label class="form-check-label" for="includeUV">Consider UV protection</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="includeRain" checked>
+                                <label class="form-check-label" for="includeRain">Consider rain protection</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Recommended Outfits</h3>
+                            <p>Based on current weather and your wardrobe</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="outfit-suggestion">
+                                        <img src="https://via.placeholder.com/300x200" alt="Outfit 1" class="mb-3">
+                                        <h5>Casual Summer Look</h5>
+                                        <p>Perfect for warm sunny days</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="badge bg-primary">Your Wardrobe</span>
+                                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="outfit-suggestion">
+                                        <img src="https://via.placeholder.com/300x200" alt="Outfit 2" class="mb-3">
+                                        <h5>Light Breezy Dress</h5>
+                                        <p>Great for hot weather</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="badge bg-secondary">Suggested Purchase</span>
+                                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="outfit-suggestion">
+                                        <img src="https://via.placeholder.com/300x200" alt="Outfit 3" class="mb-3">
+                                        <h5>Evening Outfit</h5>
+                                        <p>For cooler evenings</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="badge bg-primary">Your Wardrobe</span>
+                                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="outfit-suggestion">
+                                        <img src="https://via.placeholder.com/300x200" alt="Outfit 4" class="mb-3">
+                                        <h5>UV Protection Set</h5>
+                                        <p>With sun protection</p>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="badge bg-secondary">Suggested Purchase</span>
+                                            <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // This would integrate with a weather API
+        function updateWeather() {
+            alert("This would fetch real weather data based on user location");
+        }
+    </script>
+</body>
+</html>

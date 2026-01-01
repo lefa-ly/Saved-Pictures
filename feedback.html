@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Luki Fashion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Same styles as index.html */
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .rating input:checked ~ label {
+            color: #F1C40F;
+        }
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #F1C40F;
+        }
+        .testimonial {
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- Same navigation as index.html -->
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">Share Your Feedback</h2>
+                            <p>We'd love to hear about your experience with Luki Fashion</p>
+                            
+                            <form id="feedbackForm">
+                                <div class="mb-3">
+                                    <label for="feedbackType" class="form-label">Feedback Type</label>
+                                    <select class="form-select" id="feedbackType">
+                                        <option value="general">General Feedback</option>
+                                        <option value="suggestion">Suggestion</option>
+                                        <option value="issue">Issue</option>
+                                        <option value="compliment">Compliment</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">How would you rate your experience?</label>
+                                    <div class="rating">
+                                        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="feedbackText" class="form-label">Your Feedback</label>
+                                    <textarea class="form-control" id="feedbackText" rows="5" required></textarea>
+                                </div>
+                                
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="contactMe">
+                                    <label class="form-check-label" for="contactMe">You may contact me about this feedback</label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">What Our Users Say</h2>
+                            
+                            <div class="testimonial">
+                                <p>"Luki Fashion has completely changed how I dress! The body scan feature ensures everything fits perfectly."</p>
+                                <p class="text-muted">- Jamie, New York</p>
+                            </div>
+                            
+                            <div class="testimonial">
+                                <p>"As a non-binary person, it's so refreshing to have a fashion app that understands my style preferences."</p>
+                                <p class="text-muted">- Alex, Toronto</p>
+                            </div>
+                            
+                            <div class="testimonial">
+                                <p>"The weather-based recommendations are a game changer. No more guessing what to wear!"</p>
+                                <p class="text-muted">- Sam, London</p>
+                            </div>
+                            
+                            <div class="testimonial">
+                                <p>"I love how it suggests outfits from my existing wardrobe. Saves me so much time in the morning."</p>
+                                <p class="text-muted">- Taylor, Sydney</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your feedback! We appreciate your input.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
